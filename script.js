@@ -6,5 +6,5 @@ for (let i = 0; i < grid; i++) {
   let box = document.createElement("div");
   
   container.appendChild(box)
-  box.setAttribute("class", "tiles")
+  box.setAttribute("class", "boxes")
 }
