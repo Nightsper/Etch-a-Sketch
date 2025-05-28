@@ -1,14 +1,24 @@
+body {
+  display: flex;
+}
+
 #container {
   display: flex;
-  width: 960px;
-  height: 960px;
-  border: 1px solid black;
+  margin: 50px auto 50px;
+  width: 600px;
+  height: 600px;
+  border: 5px solid black;
   flex-wrap: wrap;
 }
 
 .boxes {
   box-sizing: border-box;
-  border: 1px solid #42445a;
-  width: 60px;
-  height: 60px;
+  border: 0.1px solid #42445a;
+  flex: 1 1 auto;
+}
+
+#changeSize {
+  width: 69px;
+  height: 30px;
+  margin: auto;
 }
