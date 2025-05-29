@@ -17,8 +17,20 @@ body {
   flex: 1 1 auto;
 }
 
-#changeSize {
+#selection {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+button {
   width: 69px;
   height: 30px;
   margin: auto;
+}
+
+#custom {
+  padding: 5px;
+  height: 60px;
 }
