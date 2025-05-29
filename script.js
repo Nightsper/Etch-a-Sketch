@@ -40,7 +40,7 @@ function createGrid(input) {
 }
 
 function removeGrid() {
-  box.forEach((div) => div.remove())
+  cells.forEach((div) => div.remove())
 }
 
 createGrid(defaultSize)
