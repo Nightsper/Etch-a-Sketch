@@ -3,7 +3,7 @@ let changeSizeBtn = document.querySelector("#changeSize")
 let blackBtn = document.querySelector("#black")
 let rainbowBtn = document.querySelector("#rainbow")
 let customBtn = document.querySelector("#custom")
-let inputColorPickerBtn = document.querySelector("#colorPicker")
+let customInputBtn = document.querySelector("#colorPicker")
 
 
 let defaultSize = 17
@@ -22,10 +22,11 @@ function createGrid(input) {
     cells.style.height = `${gridCell}px`
     
     cells.setAttribute("class", "boxes")
-
-cells.addEventListener("mouseover" && "mousedown", () => { 
-  let colorValue = getRandomColor()
-  cells.style.backgroundColor = `${colorValue}`})
+    
+    cells.addEventListener("mouseover" && "mousedown", () => {
+      let colorValue = getRandomColor()
+      cells.style.backgroundColor = `${colorValue}`
+    })
     
     container.appendChild(cells)
   }
@@ -46,10 +47,10 @@ cells.addEventListener("mouseover" && "mousedown", () => {
 }
 
 function removeGrid() {
-  container.textContent= ""
+  container.textContent = ""
 }
 
-function getRandomColor () {
+function getRandomColor() {
   let r = (Math.floor(Math.random() * 256))
   let g = (Math.floor(Math.random() * 256))
   let b = (Math.floor(Math.random() * 256))
@@ -59,20 +60,18 @@ function getRandomColor () {
 
 blackBtn.addEventListener("click", () => {
   alert("Sorry! This button isn't functional yet.")
-}
-)
+})
 
 rainbowBtn.addEventListener("click", () => {
   alert("Sorry! This button isn't functional yet.")
-}
-)
+})
 
 customBtn.addEventListener("click", () => {
   alert("Sorry! This button isn't functional yet.")
-}
-)
+})
 
-inputColorPickerBtn.disabled = true;
+customInputBtn.disabled = true;
+
 
 
 createGrid(defaultSize)
