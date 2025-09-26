@@ -1,5 +1,11 @@
 body {
   display: flex;
+  flex-wrap: wrap;
+}
+
+#heading {
+  flex-basis: 100%;
+  text-align: center;
 }
 
 #container {
@@ -13,7 +19,7 @@ body {
 
 .boxes {
   box-sizing: border-box;
-  border: 0.1px solid #42445a;
+  border: .1px solid #42445A;
   flex: 1 1 auto;
 }
 
@@ -33,7 +39,8 @@ button {
 #changeSize {
   border: none;
   border-radius: 5px;
-  background-color: #4d5cff;
+  background-color: #4D5CFF;
+  color: whitesmoke;
 }
 
 #custom {

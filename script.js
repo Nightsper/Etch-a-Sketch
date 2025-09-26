@@ -2,6 +2,8 @@ let container = document.querySelector("#container")
 let changeSizeBtn = document.querySelector("#changeSize")
 let blackBtn = document.querySelector("#black")
 let rainbowBtn = document.querySelector("#rainbow")
+let eraseBtn = document.querySelector("#erase")
+let resetBtn = document.querySelector("#reset")
 let customBtn = document.querySelector("#custom")
 let customInputBtn = document.querySelector("#colorPicker")
 
@@ -24,16 +26,47 @@ function createGrid(input) {
     cells.setAttribute("class", "boxes")
     
     cells.addEventListener("mouseover" && "mousedown", () => {
-      let colorValue = getRandomColor()
-      cells.style.backgroundColor = `${colorValue}`
+      cells.style.backgroundColor = "black"
     })
     
     container.appendChild(cells)
-  }
-  
-  changeSizeBtn.addEventListener("click", () => {
-    let input = prompt("Enter a number from 1 to 100. For ex. 17 equals to a 17 x 17 grid.")
     
+    blackBtn.addEventListener("click", () => {
+      cells.addEventListener("mouseover" && "mousedown", () => {
+  cells.style.backgroundColor = "black"
+})
+})
+
+rainbowBtn.addEventListener("click", () => {
+  cells.addEventListener("mouseover" && "mousedown", () => {
+      cells.style.backgroundColor = getRandomColor()
+    })
+})
+
+customBtn.addEventListener("click", (event) => {
+  
+  cells.addEventListener("mouseover" && "mousedown", () => {
+    cells.style.backgroundColor = event.target.value
+  })
+})
+
+eraseBtn.addEventListener("click", () => {
+  cells.addEventListener("mouseover" && "mousedown", () => {
+      cells.style.backgroundColor = "revert"
+    })
+})
+
+}}
+
+resetBtn.addEventListener("click", () => {
+  for(let cell of container.children) {
+    cell.style.backgroundColor = "revert"
+  }
+  })
+
+  changeSizeBtn.addEventListener("click", () => {
+    let input = prompt("Enter a number between 1 to 100. For Ex. 17 equals to a 17 by 17 grid.")
+
     if (input > 0 && input <= 100) {
       removeGrid()
       createGrid(input)
@@ -43,8 +76,8 @@ function createGrid(input) {
     }
     else(alert("The number you entered is not within 1 and 100!"))
   })
-  
-}
+
+
 
 function removeGrid() {
   container.textContent = ""
@@ -54,24 +87,7 @@ function getRandomColor() {
   let r = (Math.floor(Math.random() * 256))
   let g = (Math.floor(Math.random() * 256))
   let b = (Math.floor(Math.random() * 256))
-  return `rgb(${r}, ${g}, ${b})`
+  return rgb(`{r}, ${g}, ${b}`)
 }
-
-
-blackBtn.addEventListener("click", () => {
-  alert("Sorry! This button isn't functional yet.")
-})
-
-rainbowBtn.addEventListener("click", () => {
-  alert("Sorry! This button isn't functional yet.")
-})
-
-customBtn.addEventListener("click", () => {
-  alert("Sorry! This button isn't functional yet.")
-})
-
-customInputBtn.disabled = true;
-
-
 
 createGrid(defaultSize)
